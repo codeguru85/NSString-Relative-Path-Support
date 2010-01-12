@@ -64,17 +64,14 @@
         [pathComponents2 removeObjectAtIndex:0];
     }
     
-    // The file is at the same level or lower level
-    if ([pathComponents2 count] == 0) {
-        return [NSString pathWithComponents:pathComponents1];
+    // Create result path
+    for (int i = 0; i < [pathComponents2 count]; i++) {
+        [pathComponents1 insertObject:@".." atIndex:0];
     }
-    // Higher level
-    else {
-        for (int i = 0; i < [pathComponents2 count]; i++) {
-            [pathComponents1 insertObject:@".." atIndex:0];
-        }
-        return [NSString pathWithComponents:pathComponents1];
+    if ([pathComponents1 count] == 0) {
+        return @".";
     }
+    return [NSString pathWithComponents:pathComponents1];
 }
 
 @end
