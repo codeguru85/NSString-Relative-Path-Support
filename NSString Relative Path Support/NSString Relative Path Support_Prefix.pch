@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'NSString Relative Path Support' target in the 'NSString Relative Path Support' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
